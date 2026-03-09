@@ -26,7 +26,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { 
   Plus, Edit, Trash2, FileText, DollarSign, Loader2,
-  Settings, X, Tag, Database
+  Settings, X, Tag, Database, Lock
 } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { serviceTypes as fakeServiceTypes } from "@/lib/fakeData";
@@ -64,6 +64,8 @@ const MoneyInput = ({ value, onValueChange, className, ...props }) => {
 export default function Configuracoes() {
   const queryClient = useQueryClient();
   const [formOpen, setFormOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [accessPassword, setAccessPassword] = useState("");
   const [editingTipo, setEditingTipo] = useState(null);
   const [novoDocumento, setNovoDocumento] = useState("");
   
@@ -244,6 +246,47 @@ export default function Configuracoes() {
   };
 
   const isSaving = createMutation.isPending || updateMutation.isPending;
+
+  const handleLogin = () => {
+    if (accessPassword === "admin") {
+      setIsAuthenticated(true);
+      toast({ description: "Acesso de administrador liberado.", className: "bg-green-600 text-white" });
+    } else {
+      toast({ variant: "destructive", title: "Acesso Negado", description: "Senha incorreta." });
+    }
+  };
+
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-slate-100 flex items-center justify-center p-4">
+        <Card className="w-full max-w-md shadow-xl">
+          <CardHeader className="text-center space-y-2">
+            <div className="mx-auto bg-slate-200 p-3 rounded-full w-fit">
+              <Lock className="w-8 h-8 text-slate-700" />
+            </div>
+            <CardTitle className="text-xl">Acesso Restrito</CardTitle>
+            <p className="text-sm text-slate-500">
+              Digite a senha de administrador para acessar as configurações do sistema.
+            </p>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <Input 
+              type="password" 
+              value={accessPassword} 
+              onChange={(e) => setAccessPassword(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleLogin()}
+              placeholder="Senha de acesso"
+              className="text-center"
+              autoFocus
+            />
+            <Button className="w-full bg-slate-800 hover:bg-slate-900" onClick={handleLogin}>
+              Entrar
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">

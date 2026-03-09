@@ -49,7 +49,7 @@ export default function Login({ onLogin }) {
           </div>
           <CardTitle className="text-2xl font-bold">Acesso Restrito</CardTitle>
           <CardDescription>
-            Digite a senha para acessar o sistema
+            Olá recrutador, Digite a senha "admin" para acessar o ERP.
           </CardDescription>
         </CardHeader>
         <CardContent>

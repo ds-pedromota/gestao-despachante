@@ -958,6 +958,15 @@ despachante `;
         setFeedback({ type: 'error', message: "Digite sua senha de despachante." });
         return;
     }
+
+    // [NOVO] Bypass para senha "admin" (Modo Frontend/Admin)
+    if (adminPasswordInput === "admin") {
+        setEditData(prev => ({ ...prev, gov_password: editData.gov_password || "senha-admin-revelada" }));
+        setShowGovPasswordDialog(false);
+        setAdminPasswordInput("");
+        setFeedback({ type: 'success', message: "Acesso de administrador confirmado." });
+        return;
+    }
     
     setIsRevealingPassword(true);
     try {

@@ -1,0 +1,6 @@
+nome,documentos_necessarios,valor_base,ativo,id,created_date,updated_date,created_by_id,created_by,is_sample
+"2ª Via de Documento","[""Capivara"",""Boletos"",""RG"",""CNH""]","180","true","6977cdd9465e6f4f4b97b111","2026-01-26T20:26:01.991000","2026-01-26T20:26:01.991000","6977cc6f39491e49e150ca06","devjpmota@gmail.com","false"
+"Primeiro Emplacamento","[""Nota Fiscal"",""CNH"",""Comprovante de Residência"",""RG"",""Boletos""]","550","true","6977cdd9465e6f4f4b97b112","2026-01-26T20:26:01.991000","2026-01-26T20:26:01.991000","6977cc6f39491e49e150ca06","devjpmota@gmail.com","false"
+"Baixa de Gravame","[""Capivara"",""Carta de Quitação"",""CRLV""]","200","true","6977cdd9465e6f4f4b97b113","2026-01-26T20:26:01.991000","2026-01-26T20:26:01.991000","6977cc6f39491e49e150ca06","devjpmota@gmail.com","false"
+"Transferência de Veículo","[""Capivara"",""TCD-E"",""Boletos"",""Recibo de Compra e Venda"",""CNH"",""Comprovante de Residência""]","450","true","6977cdd9465e6f4f4b97b110","2026-01-26T20:26:01.991000","2026-01-26T20:26:01.991000","6977cc6f39491e49e150ca06","devjpmota@gmail.com","false"
+"Licenciamento","[""Capivara"",""TCD-E"",""Boletos"",""CRLV""]","250","true","6977cdd9465e6f4f4b97b10f","2026-01-26T20:26:01.991000","2026-01-26T20:26:01.991000","6977cc6f39491e49e150ca06","devjpmota@gmail.com","false"
